@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Telefon Tavsiye Uygulaması 🤔</title>
+    <!-- Tailwind CSS CDN stil için -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Özel stil dosyamızı bağla -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center min-h-screen p-4">
+    <div class="app-container bg-white p-8 rounded-xl shadow-2xl w-full max-w-md transform transition-all duration-300 ease-in-out">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Akıllı Telefon Tavsiyecisi 📱</h1>
+
+        <!-- Giriş Bölümü -->
+        <div id="inputSection" class="input-section mb-8">
+            <div class="mb-4">
+                <label for="budget" class="block text-gray-700 text-sm font-medium mb-2">Bütçe:</label>
+                <select id="budget">
+                    <option value="" disabled selected>Bütçe seçin...</option>
+                    <option value="low">Düşük</option>
+                    <option value="medium">Orta</option>
+                    <option value="high">Yüksek</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <label for="need" class="block text-gray-700 text-sm font-medium mb-2">Temel İhtiyaç:</label>
+                <select id="need">
+                    <option value="" disabled selected>Temel ihtiyacı seçin...</option>
+                    <option value="camera">Kamera 📸</option>
+                    <option value="battery">Batarya 🔋</option>
+                    <option value="processor">İşlemci 🚀</option>
+                </select>
+            </div>
+
+            <button id="getRecommendationBtn" class="action-button">
+                Telefon Tavsiyesi Al
+            </button>
+        </div>
+
+        <!-- Mesaj Kutusu (Hatalar/Bilgi için - başlangıçta gizli) -->
+        <div id="messageBox" class="hidden bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mb-6 shadow-md" role="alert">
+            <span class="block sm:inline" id="messageText"></span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" id="closeMessageBtn">
+                <svg class="fill-current h-6 w-6 text-yellow-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Kapat</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15L6.22 7.54a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.15 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+        </div>
+
+        <!-- Telefon Tavsiyesi Bölümü (başlangıçta gizli) -->
+        <div id="phoneRecommendationSection" class="hidden text-center p-6 bg-green-50 rounded-lg shadow-inner">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Size Özel Telefon Tavsiyesi! ✨</h2>
+            <p id="phoneRecommendationText" class="text-gray-700 text-lg mb-6 leading-relaxed font-bold text-indigo-700"></p>
+            <div class="flex justify-center">
+                <button id="resetButton" class="secondary-button">
+                    Tekrar Başla 🔄
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Özel JavaScript dosyamızı bağla -->
+    <script src="script.js"></script>
+</body>
+</html>
