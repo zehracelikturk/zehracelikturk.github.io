@@ -1,0 +1,52 @@
+/* Bu dosya, uygulamanızın özel CSS stillerini içerir. */
+body {
+    font-family: 'Inter', sans-serif; /* Inter yazı tipinin global olarak uygulanmasını sağlar */
+}
+
+/* Tavsiye ve mesaj kutusu bölümlerini başlangıçta gizle */
+#phoneRecommendationSection,
+#messageBox {
+    display: none;
+}
+
+/* Select elementleri için temel stil, Tailwind ile geliştirildi */
+select {
+    /* Tailwind CSS sınıfları uygulanıyor */
+    appearance: none; /* Varsayılan select stilini kaldır */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.293 12.95l.707.707 3.536-3.536-3.536-3.536-.707.707L11.586 10l-2.293 2.293z" transform="rotate(90 10 10)"/></svg>'); /* Özel ok ikonu */
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.5em 1.5em; /* İkon boyutu */
+    padding-right: 2.5rem; /* İkon için sağ dolgu */
+
+    @apply block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out;
+}
+
+/* Ana aksiyon düğmesi için stil */
+.action-button {
+    @apply w-full bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ease-in-out transform hover:scale-105;
+}
+
+/* İkincil düğmeler için stil */
+.secondary-button {
+    @apply bg-gray-200 text-gray-800 p-3 rounded-md font-semibold hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 transition duration-200 ease-in-out transform hover:scale-105;
+}
+
+/* Uygulama konteyneri için genel stil ayarlamaları */
+.app-container {
+    /* Mevcut Tailwind sınıflarını koru */
+    /* Daha iyi görünürlük için ekstra gölge ve yuvarlak köşeler */
+    @apply rounded-xl shadow-2xl;
+}
+
+/* Mesaj kutusunun görsel iyileştirmesi */
+#messageBox {
+    @apply flex items-center justify-between; /* İçerik ve kapatma düğmesini hizala */
+}
+
+/* Tavsiye metninin görünürlüğünü artır */
+#phoneRecommendationText {
+    @apply text-3xl font-extrabold text-indigo-800; /* Daha büyük ve daha koyu yazı tipi */
+}
